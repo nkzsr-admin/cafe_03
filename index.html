@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>森の洋館 喫茶コモレビ | Komorebi Café</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["'Playfair Display'", "serif"],
+            serifjp: ["'Noto Serif JP'", "serif"],
+          },
+          colors: {
+            somagreen: "#0A3B3C",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html,
+    body {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body class="font-serifjp antialiased text-gray-900">
+
+<!-- =================== Mobile Header =================== -->
+<header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-4 py-3 bg-somagreen md:hidden">
+  <div class="text-white font-display tracking-wider text-lg">森の洋館 喫茶コモレビ</div>
+  <button id="burger" class="text-white focus:outline-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+  </button>
+</header>
+
+<!-- =================== Mobile Nav Panel =================== -->
+<nav id="mobileNav" class="fixed inset-0 z-40 hidden bg-somagreen bg-opacity-95 text-white flex flex-col items-center justify-center text-center space-y-8 md:hidden">
+  <a href="#about" class="nav-link text-lg">お店について</a>
+  <a href="#menu" class="nav-link text-lg">メニュー</a>
+  <a href="#news" class="nav-link text-lg">お知らせ</a>
+  <a href="#access" class="nav-link text-lg">行き方・地図</a>
+  <a href="#contact" class="nav-link text-lg">お問い合わせ</a>
+</nav>
+
+<!-- =================== Desktop Sidebar =================== -->
+<aside class="hidden md:fixed md:flex md:flex-col md:items-center md:justify-start md:space-y-8 md:w-56 md:h-full md:bg-somagreen md:text-white md:py-12">
+  <h1 class="font-display text-3xl rotate-90 md:rotate-0 whitespace-nowrap leading-none">森の洋館<br /> 喫茶コモレビ</h1>
+  <nav class="flex flex-col space-y-4 text-sm tracking-wide">
+    <a href="#about" class="hover:opacity-80">お店について</a>
+    <a href="#menu" class="hover:opacity-80">メニュー</a>
+    <a href="#news" class="hover:opacity-80">お知らせ</a>
+    <a href="#access" class="hover:opacity-80">行き方・地図</a>
+    <a href="#contact" class="hover:opacity-80">お問い合わせ</a>
+  </nav>
+</aside>
+
+<!-- =================== Main Content =================== -->
+<!-- 幅を計算してサイドバー分を差し引き、横はみ出しを防ぐ -->
+<main class="w-full md:w-[calc(100vw-14rem)] md:ml-56">
+  <!-- Hero -->
+  <section class="relative w-screen md:w-full h-[60vh] md:h-screen overflow-hidden">
+    <img src="src/images/cate3_hero.jpg" alt="店内の様子" class="absolute inset-0 object-cover w-full h-full" />
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <h2 class="font-display text-4xl md:text-6xl tracking-widest mb-4 drop-shadow-lg">喫茶 コモレビ</h2>
+      <p class="text-sm md:text-lg">光と影が織りなす静寂の空間へようこそ</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg-somagreen text-white py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <h3 class="font-display text-2xl md:text-3xl">お店について</h3>
+      <p class="text-sm leading-relaxed max-w-2xl mx-auto">
+        大正・昭和初期の家具と照明に囲まれた喫茶室「コモレビ」。
+        こぢんまりとした空間で、珈琲やトーストをはじめ、手作りの洋菓子をご用意しております。
+        昼下がりの静けさと淡い灯りの中で、ゆったりとした時間をお過ごしください。
+      </p>
+      <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto">
+        <img src="src/images/cafe3_about.jpg" alt="店内1" class="object-cover w-full h-40 rounded" />
+        <img src="src/images/cafe2.jpg" alt="ランプ" class="object-cover w-full h-40 rounded" />
+        <img src="src/images/cafe3.jpg" alt="食器" class="object-cover w-full h-40 rounded" />
+        <img src="src/images/cafe3_about.jpg" class="object-cover w-full h-40 rounded"  alt=""/>
+        <img src="src/images/cafe2.jpg" alt="コーヒー器具" class="object-cover w-full h-40 rounded" />
+        <img src="src/images/cafe3.jpg" alt="照明" class="object-cover w-full h-40 rounded" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="bg-white py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center space-y-10">
+      <h3 class="font-display text-2xl md:text-3xl mb-8">メニュー</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=60" alt="サンドイッチ" class="object-cover w-full h-48 rounded" />
+        <img src="src/images/cafe3_menu.jpg" alt="パフェ" class="object-cover w-full h-48 rounded" />
+        <img src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?auto=format&fit=crop&w=600&q=60" alt="トースト" class="object-cover w-full h-48 rounded" />
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=6" alt="コーヒー" class="object-cover w-full h-48 rounded" />
+        <img src="src/images/cafe3_menu.jpg" alt="ケーキ" class="object-cover w-full h-48 rounded" />
+        <img src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?auto=format&fit=crop&w=600&q=60"  alt="トースト" class="object-cover w-full h-48 rounded" />
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left text-sm leading-relaxed max-w-5xl mx-auto">
+        <div>
+          <h4 class="font-display text-center border border-somagreen px-4 py-1 inline-block mb-4">軽 食</h4>
+          <ul class="space-y-1 list-disc list-inside">
+            <li>たまごサンドイッチ</li>
+            <li>バタートースト</li>
+            <li>あんバタートースト</li>
+            <li>季節のキッシュ</li>
+            <li>ハッシュドビーフ など</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display text-center border border-somagreen px-4 py-1 inline-block mb-4">喫茶菓子</h4>
+          <ul class="space-y-1 list-disc list-inside">
+            <li>自家製焼き菓子</li>
+            <li>季節のロールケーキ</li>
+            <li>コーヒーゼリー</li>
+            <li>パフェ</li>
+            <li>プリンアラモード など</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display text-center border border-somagreen px-4 py-1 inline-block mb-4">喫茶飲料</h4>
+          <ul class="space-y-1 list-disc list-inside">
+            <li>深煎りネルドリップ珈琲</li>
+            <li>紅茶(ポットサービス)</li>
+            <li>カフェラテ</li>
+            <li>ほうじ茶</li>
+            <li>自家製ジンジャーエール など</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display text-center border border-somagreen px-4 py-1 inline-block mb-4">お 酒など</h4>
+          <ul class="space-y-1 list-disc list-inside">
+            <li>葡萄酒(赤/白)</li>
+            <li>自家製リモンチェッロ</li>
+            <li>ウイスキーハイボール</li>
+            <li>自家製サングリア</li>
+            <li>季節のカクテル など</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news" class="bg-somagreen text-white py-16 px-6">
+    <div class="max-w-3xl mx-auto text-center space-y-10">
+      <h3 class="font-display text-2xl md:text-3xl mb-4">お知らせ</h3>
+      <div class="bg-white text-gray-800 rounded shadow-lg overflow-auto h-64 p-6 space-y-3 text-sm leading-relaxed">
+        <p>2025年10月15日　今月の営業日程を更新しました。</p>
+        <p>2025年9月30日　秋限定メニューが始まりました。</p>
+        <p>2025年8月16日　営業時間変更のお知らせ。</p>
+        <p>2025年7月01日　サマーイベント開催のお知らせ。</p>
+        <p>2025年6月20日　Webサイトをリニューアルしました。</p>
+        <p>2025年5月09日　GW休業のお知らせ。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access & Map -->
+  <section id="access" class="bg-gray-50 py-16 px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <div class="space-y-6 text-sm leading-relaxed">
+        <h3 class="font-display text-2xl mb-4">行き方・場所</h3>
+        <address class="not-italic space-y-2">
+          <p class="font-semibold">森の洋館 喫茶コモレビ</p>
+          <p>〒XXX-XXXX 沖縄県名護市1-2-3</p>
+          <p>TEL: 090-1234-5678</p>
+          <p>MAIL: info@XXX-XXX.com</p>
+        </address>
+        <p>地下鉄⚪︎⚪︎線 <span class="font-semibold">⚪︎⚪︎駅</span> ⚪︎番出口より徒歩5分。</p>
+        <p>駐車場はございませんので、近隣コインパーキングをご利用ください。</p>
+      </div>
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.626315286409!2d139.6978579156079!3d35.675915337104524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cbad8d58d03%3A0x679e0ad18dde1e5b!2zKomorebi!5e0!3m2!1sja!2sjp!4v0000000000000"
+          width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-somagreen text-white py-16 px-6">
+    <div class="max-w-3xl mx-auto space-y-8">
+      <h3 class="font-display text-2xl md:text-3xl text-center">お問い合わせ</h3>
+      <form class="space-y-4">
+        <div>
+          <label class="block mb-1" for="name">お名前</label>
+          <input id="name" type="text" placeholder="例：山田 花子" class="w-full p-3 rounded bg-white text-gray-800 focus:outline-none" />
+        </div>
+        <div>
+          <label class="block mb-1" for="email">メールアドレス</label>
+          <input id="email" type="email" placeholder="sample@example.com" class="w-full p-3 rounded bg-white text-gray-800 focus:outline-none" />
+        </div>
+        <div>
+          <label class="block mb-1" for="message">メッセージ</label>
+          <textarea id="message" rows="6" class="w-full p-3 rounded bg-white text-gray-800 focus:outline-none" placeholder="ご予約やご質問などお気軽にどうぞ"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 bg-white text-somagreen font-semibold rounded hover:bg-gray-100 transition">送 信</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- =================== Footer =================== -->
+<footer class="bg-somagreen text-white py-12 px-6 md:w-[calc(100vw-14rem)] md:ml-56">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 text-sm">
+    <div class="space-y-4">
+      <h4 class="font-display text-lg">森の洋館 喫茶コモレビ</h4>
+      <p>〒XXX-XXXX 沖縄県名護市1-2-3</p>
+      <p>営業時間：11:00〜18:00（L.O 17:30）<br />定休日：火曜・水曜</p>
+      <div class="flex space-x-3 text-xl">
+        <a href="#" aria-label="Instagram" class="hover:opacity-75">
+          <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M7.5 2C4.462 2 2 4.462 2 7.5v9A5.507 5.507 0 0 0 7.5 22h9a5.507 5.507 0 0 0 5.5-5.5v-9A5.507 5.507 0 0 0 16.5 2h-9zm0 2h9A3.49 3.49 0 0 1 20 7.5v9A3.49 3.49 0 0 1 16.5 20h-9A3.49 3.49 0 0 1 4 16.5v-9A3.49 3.49 0 0 1 7.5 4zm9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0 2a3 3 0 1 1 0 6A3 3 0 0 1 12 9z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="hover:opacity-75">
+          <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.54 9.9v-7h-2v-3h2V9.5A3.5 3.5 0 0 1 14 6h2v3h-1.5A1.5 1.5 0 0 0 13 10.5V12h3l-.5 3h-2.5v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="space-y-4" id="policy">
+      <h4 class="font-display text-lg">プライバシーポリシー</h4>
+      <p class="leading-relaxed">当サイトでは、お客様の個人情報を保護するために、SSL暗号化通信を採用しております。ご提供いただいた個人情報は、お問い合わせへの対応以外の目的で使用いたしません。</p>
+    </div>
+  </div>
+</footer>
+
+<!-- =================== Scripts =================== -->
+<script>
+  const burger = document.getElementById("burger");
+  const mobileNav = document.getElementById("mobileNav");
+  const navLinks = document.querySelectorAll("#mobileNav .nav-link");
+
+  burger?.addEventListener("click", () => {
+    mobileNav.classList.toggle("hidden");
+  });
+
+  navLinks.forEach((link) =>
+    link.addEventListener("click", () => {
+      mobileNav.classList.add("hidden");
+    })
+  );
+</script>
+</body>
+</html>
